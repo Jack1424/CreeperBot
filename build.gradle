@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group 'io.github.jack1424.creeperbot'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("com.discord4j:discord4j-core:3.2.3")
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'io.github.jack1424.creeperbot.CreeperBot'
+    }
+}
