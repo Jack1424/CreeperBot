@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'io.github.jack1424.creeperbot'
-version '1.0.0'
+version '1.1.0'
 
 repositories {
     mavenCentral()
