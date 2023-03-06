@@ -16,7 +16,6 @@ public class CreeperBot {
 				.block();
 
 		System.out.println("READY!");
-		System.out.println("Currently in: " + gateway.getGuilds().count().block() + " servers");
 
 		gateway.on(MessageCreateEvent.class).subscribe(event -> {
 			if (event.getMessage().getContent().contains("creeper"))
