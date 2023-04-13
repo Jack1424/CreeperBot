@@ -18,7 +18,7 @@ public class CreeperBot {
 		System.out.println("READY!");
 
 		gateway.on(MessageCreateEvent.class).subscribe(event -> {
-			if (event.getMessage().getContent().contains("creeper"))
+			if (event.getMessage().getContent().toLowerCase().contains("creeper"))
 				event.getMessage().getChannel().block().createMessage("Aw man").block();
 		});
 
