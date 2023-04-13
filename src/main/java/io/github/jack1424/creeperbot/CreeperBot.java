@@ -6,6 +6,8 @@ import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.object.presence.ClientActivity;
 import discord4j.core.object.presence.ClientPresence;
 
+import java.util.Objects;
+
 public class CreeperBot {
 	public static void main(String[] args) {
 		final GatewayDiscordClient gateway = DiscordClient
@@ -17,9 +19,9 @@ public class CreeperBot {
 
 		System.out.println("READY!");
 
-		gateway.on(MessageCreateEvent.class).subscribe(event -> {
+		Objects.requireNonNull(gateway).on(MessageCreateEvent.class).subscribe(event -> {
 			if (event.getMessage().getContent().toLowerCase().contains("creeper"))
-				event.getMessage().getChannel().block().createMessage("Aw man").block();
+				Objects.requireNonNull(event.getMessage().getChannel().block()).createMessage("Aw man").block();
 		});
 
 		gateway.onDisconnect().block();
